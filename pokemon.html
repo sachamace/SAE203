@@ -1,10 +1,10 @@
-<!-- index.html -->
+<!-- pokedex.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil - Pokémon World</title>
+  <title>Pokédex</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,20 +15,21 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="pokemon.html">Pokédex</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pokedex.html">Pokédex</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="bg-primary text-white text-center p-5">
-    <h1>Bienvenue dans le monde des Pokémon !</h1>
-    <p>Explorez le Pokédex et découvrez vos créatures préférées.</p>
-  </header>
+  <div class="container py-5">
+    <h2 class="mb-4">Pokédex</h2>
+    <div id="pokedex" class="row row-cols-1 row-cols-md-3 g-4"></div>
+  </div>
 
   <footer class="bg-dark text-white text-center p-3">
     © 2025 Pokémon World
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
