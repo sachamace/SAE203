@@ -1,4 +1,3 @@
-/* script.js */
 const pokedex = document.getElementById('pokedex');
 
 async function fetchPokemon(id) {
@@ -40,7 +39,7 @@ async function loadPokedex() {
       const audio = new Audio(pokemon.cry);
       audio.play();
       img.classList.remove('animate__pulse');
-      void img.offsetWidth; // reset animation
+      void img.offsetWidth;
       img.classList.add('animate__pulse');
     });
 
@@ -48,7 +47,6 @@ async function loadPokedex() {
   }
 }
 
-// Ajouter Animate.css
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
