@@ -1,3 +1,4 @@
+/* script.js */
 const pokedex = document.getElementById('pokedex');
 
 async function fetchPokemon(id) {
@@ -14,7 +15,7 @@ async function fetchPokemon(id) {
   return {
     id: data.id,
     name: name,
-    img: data.sprites.front_default,
+    spriteName: data.name.toLowerCase(),
     cry: `https://play.pokemonshowdown.com/audio/cries/${data.name.toLowerCase()}.mp3`
   };
 }
@@ -26,7 +27,7 @@ async function loadPokedex() {
     col.className = 'col';
     col.innerHTML = `
       <div class="card h-100">
-        <img src="${pokemon.img}" class="card-img-top animate__animated animate__pulse" alt="${pokemon.name}" style="cursor: pointer;">
+        <img src="https://raw.githubusercontent.com/ProjectPokemonSprites/sprites/master/anim/normal/${pokemon.spriteName}.gif" class="card-img-top animate__animated animate__pulse" alt="${pokemon.name}" style="cursor: pointer;">
         <div class="card-body">
           <h5 class="card-title">${pokemon.name}</h5>
           <p class="card-text">#${pokemon.id.toString().padStart(3, '0')}</p>
@@ -39,7 +40,7 @@ async function loadPokedex() {
       const audio = new Audio(pokemon.cry);
       audio.play();
       img.classList.remove('animate__pulse');
-      void img.offsetWidth;
+      void img.offsetWidth; // reset animation
       img.classList.add('animate__pulse');
     });
 
@@ -47,10 +48,10 @@ async function loadPokedex() {
   }
 }
 
+// Ajouter Animate.css
 const link = document.createElement('link');
 link.rel = 'stylesheet';
 link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
 document.head.appendChild(link);
 
 loadPokedex();
-
