@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in *.txt; do
+  # Vérifie si des fichiers .txt existent
+  [ -e "$file" ] || continue
+  
+  # Supprime l'extension et ajoute .png
+  base_name="${file%.txt}"
+  mv "$file" "${base_name}.png"
+done
