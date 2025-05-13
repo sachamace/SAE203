@@ -19,9 +19,11 @@ async function fetchPokemon(id) {
     cry: `https://play.pokemonshowdown.com/audio/cries/${data.name.toLowerCase()}.mp3`
   };
 }
+
 function padId(id) {
   return id.toString().padStart(3, '0');
 }
+
 function loadPokedex() {
   for (let i = 1; i <= 151; i++) {
     const idPadded = padId(i);
@@ -32,8 +34,8 @@ function loadPokedex() {
     col.innerHTML = `
       <div class="card h-100">
         <img 
-          src="/home/etuinfo/samace/COURS/Réseau/SAE203/SAE203/images_png_pokemon/${idPadded}.png"
-          data-gif="/home/etuinfo/samace/COURS/Réseau/SAE203/SAE203/images_gif_pokemon/${idPadded}.gif"
+          src="./images_png_pokemon/${idPadded}.png"
+          data-gif="./images_gif_pokemon/${idPadded}.gif"
           class="card-img-top"
           alt="Pokemon #${idPadded}" 
           style="cursor: pointer;">
@@ -57,7 +59,7 @@ function loadPokedex() {
     });
 
     img.addEventListener('mouseleave', () => {
-      img.src = `/home/etuinfo/samace/COURS/Réseau/SAE203/SAE203/images_png_pokemon/${idPadded}.png`;
+      img.src = `./images_png_pokemon/${idPadded}.png`;
     });
 
     pokedex.appendChild(col);
